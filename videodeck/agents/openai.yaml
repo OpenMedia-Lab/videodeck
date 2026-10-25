@@ -1,0 +1,4 @@
+interface:
+  display_name: "videodeck"
+  short_description: "Create source-grounded videos with code and agents"
+  default_prompt: "Use $videodeck to turn this article into an explanatory video."

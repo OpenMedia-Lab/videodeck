@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1280, height=720">
+  <title>One token, two experts</title>
+  <link rel="icon" href="data:,">
+  <script src="node_modules/gsap/dist/gsap.min.js"></script>
+  <style>
+    /* Local aliases prevent HyperFrames' generic-font -> remote Inter rewrite. */
+    @font-face { font-family: 'Video Sans'; src: url('node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-400-normal.woff2') format('woff2'); font-weight: 400; font-style: normal; }
+    @font-face { font-family: 'Video Sans'; src: url('node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-700-normal.woff2') format('woff2'); font-weight: 600 900; font-style: normal; }
+    @font-face { font-family: 'Video Math'; src: url('node_modules/@fontsource/libre-baskerville/files/libre-baskerville-latin-400-italic.woff2') format('woff2'); font-weight: 400; font-style: normal; }
+    :root { --bg: #f7f8fa; --ink: #182027; --muted: #52606d; --blue: #1c5bd7; --line: #c3cbd4; }
+    * { box-sizing: border-box; margin: 0; }
+    html, body { width: 1280px; height: 720px; overflow: hidden; background: var(--bg); }
+    body { color: var(--ink); font-family: 'Video Sans', sans-serif; }
+    #root { position: relative; width: 1280px; height: 720px; background: var(--bg); }
+    .clip { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .content { display: flex; flex-direction: column; width: 100%; height: 100%; padding: 54px 64px; gap: 18px; }
+    .eyebrow { font-size: 19px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+    h1 { font-size: 58px; font-weight: 700; line-height: 1.1; letter-spacing: -.035em; }
+    .phase { position: absolute; inset: 0; }
+    .phase .content { gap: 18px; }
+    .phase h1 { max-width: 1130px; }
+    .footer { margin-top: auto; max-width: 1120px; font-size: 27px; line-height: 1.4; color: var(--muted); }
+    .phase-later { opacity: 0; }
+    #diagram { position: absolute; inset: 0; }
+    #lines { position: absolute; inset: 0; width: 1280px; height: 720px; }
+    .token, .expert, .contribution { position: absolute; display: flex; align-items: center; justify-content: center; }
+    .token { left: 124px; top: 331px; width: 102px; height: 70px; color: var(--blue); background: var(--bg); border: 3px solid var(--blue); border-radius: 14px; font-size: 42px; }
+    .math { font-family: 'Video Math', serif; font-style: normal; }
+    .expert { left: 510px; width: 220px; height: 100px; border: 2px solid var(--line); background: var(--bg); border-radius: 16px; gap: 10px; flex-direction: column; }
+    #expert-a { top: 243px; } #expert-b { top: 423px; }
+    .expert-name { font-size: 29px; font-weight: 600; }
+    .expert-desc { color: var(--muted); font-size: 19px; }
+    .contribution { left: 918px; width: 274px; height: 104px; border: 2px solid var(--blue); border-radius: 16px; color: var(--blue); background: var(--bg); gap: 10px; font-size: 42px; font-variant-numeric: tabular-nums; }
+    #out-a { top: 241px; } #out-b { top: 421px; }
+    .contribution sub { font-size: .56em; font-style: normal; }
+    .weight { font-size: 33px; font-family: 'Video Sans', sans-serif; font-style: normal; }
+    .router-label { position: absolute; left: 277px; top: 216px; color: var(--muted); font-size: 25px; }
+    .weight-label { position: absolute; left: 340px; color: var(--blue); font-size: 26px; }
+    #weight-a { top: 257px; } #weight-b { top: 466px; }
+    .equation-mark { position: absolute; color: var(--ink); font-family: 'Video Math', serif; font-size: 59px; }
+    #equals { left: 134px; top: 340px; } #plus { left: 714px; top: 340px; }
+    #sum-rule { position: absolute; left: 326px; top: 488px; color: var(--muted); font-size: 30px; }
+    #end-line { position: absolute; left: 64px; right: 64px; top: 186px; height: 2px; background: var(--line); }
+  </style>
+</head>
+<body>
+<div id="root" data-composition-id="expert-routing" data-start="0" data-duration="12.4" data-width="1280" data-height="720" data-fps="30">
+  <div id="canvas" class="clip">
+    <section id="phase-1" class="phase">
+      <div class="content">
+        <p class="eyebrow">Sparse mixture of experts · illustrative weights</p>
+        <h1>One token. Two selected experts.</h1>
+        <p class="footer">A router sends the same token x to two selected experts.</p>
+      </div>
+    </section>
+    <section id="phase-2" class="phase phase-later">
+      <div class="content">
+        <p class="eyebrow">Step 02 · parallel computation</p>
+        <h1>Each expert transforms the token.</h1>
+        <p class="footer">The two outputs keep their routing weights: 0.7 and 0.3.</p>
+      </div>
+    </section>
+    <section id="phase-3" class="phase phase-later">
+      <div class="content">
+        <p class="eyebrow">Step 03 · weighted combination</p>
+        <h1>Move the contributions into one sum.</h1>
+        <p class="footer">The weighted outputs combine into one result y for this token.</p>
+      </div>
+    </section>
+    <div id="end-line" data-layout-ignore></div>
+    <div id="diagram">
+      <div id="routing-view">
+        <svg id="lines" viewBox="0 0 1280 720" aria-label="Two routing branches">
+          <g fill="none" stroke="#c3cbd4" stroke-width="3">
+            <path d="M226 366 H280 Q310 366 310 336 V293 H510"/>
+            <path d="M226 366 H280 Q310 366 310 396 V473 H510"/>
+            <path d="M730 293 H918"/>
+            <path d="M730 473 H918"/>
+          </g>
+        </svg>
+        <div id="router-label" class="router-label">router</div>
+        <div id="weight-a" class="weight-label">0.7</div>
+        <div id="weight-b" class="weight-label">0.3</div>
+        <div id="expert-a" class="expert"><span class="expert-name">Expert 1</span><span class="expert-desc">transform E₁</span></div>
+        <div id="expert-b" class="expert"><span class="expert-name">Expert 2</span><span class="expert-desc">transform E₂</span></div>
+        <div id="token" class="token" data-layout-allow-overlap><span class="math">x</span></div>
+        <!-- Exact overlap at the branch origin deliberately represents copies
+             of the SAME token. No expert label is under these endpoints. -->
+        <div id="copy-a" class="token" data-layout-allow-overlap data-layout-allow-occlusion><span class="math">x</span></div>
+        <div id="copy-b" class="token" data-layout-allow-overlap data-layout-allow-occlusion><span class="math">x</span></div>
+      </div>
+      <!-- These SAME objects migrate into the final native-HTML equation. -->
+      <div id="out-a" class="contribution" aria-label="0.7 times E sub 1 of x"><span class="weight">0.7</span><span class="math">E<sub>1</sub>(x)</span></div>
+      <div id="out-b" class="contribution" aria-label="0.3 times E sub 2 of x"><span class="weight">0.3</span><span class="math">E<sub>2</sub>(x)</span></div>
+      <div id="equals" class="equation-mark"><span class="math">y</span> =</div>
+      <div id="plus" class="equation-mark">+</div>
+      <div id="sum-rule">0.7 + 0.3 = 1</div>
+    </div>
+  </div>
+  <!-- One uninterrupted local fixture spans BOTH phase transitions. -->
+  <audio id="continuity-tone" src="assets/continuity.wav" data-start="0" data-duration="12.4" data-track-index="1" data-volume="1"></audio>
+</div>
+<script>
+  // Synchronous construction, explicit starts and finite tweens. The renderer
+  // controls this single paused playhead; no callbacks, timers or autoplay.
+  gsap.config({ force3D: false });
+  const tl = gsap.timeline({ paused: true });
+  tl.from('#phase-1 .eyebrow', { opacity: .6, y: 8, duration: .42, ease: 'power2.out' }, 0);
+  tl.from('#phase-1 h1', { opacity: .3, y: 12, duration: .55, ease: 'power3.out' }, 0);
+  tl.from('#phase-1 .footer', { opacity: 0, y: 12, duration: .5, ease: 'sine.out' }, .35);
+  tl.from('#end-line', { scaleX: 0, transformOrigin: 'left center', duration: .6, ease: 'power2.out' }, .25);
+  tl.from('#lines', { opacity: 0, duration: .5, ease: 'sine.out' }, .65);
+  tl.from('#router-label', { opacity: 0, y: 10, duration: .45, ease: 'power2.out' }, .65);
+  tl.from(['#weight-a', '#weight-b'], { opacity: 0, y: 8, duration: .45, stagger: .1, ease: 'power3.out' }, .85);
+  tl.from(['#expert-a', '#expert-b'], { opacity: 0, x: 16, duration: .5, stagger: .12, ease: 'power2.out' }, .75);
+  tl.from('#token', { opacity: 0, scale: .88, duration: .5, ease: 'back.out(1.2)' }, .5);
+  tl.from(['#copy-a', '#copy-b'], { opacity: 0, duration: .01 }, 1.5);
+  tl.to('#copy-a', { x: 275, y: -73, scale: .72, duration: 1.35, ease: 'power2.inOut' }, 1.5);
+  tl.to('#copy-b', { x: 275, y: 107, scale: .72, duration: 1.35, ease: 'power2.inOut' }, 1.5);
+  // Explanatory scene crossfade: the routed objects remain in place.
+  tl.to('#phase-1', { opacity: 0, duration: .18, ease: 'sine.inOut' }, 3.8);
+  tl.to('#phase-2', { opacity: 1, duration: .27, ease: 'sine.inOut' }, 3.98);
+  tl.from('#phase-2 h1', { y: 14, duration: .55, ease: 'power3.out' }, 3.98);
+  tl.from('#phase-2 .footer', { y: 8, duration: .5, ease: 'power2.out' }, 4.0);
+  tl.to(['#expert-a', '#expert-b'], { borderColor: '#1c5bd7', duration: .5, stagger: .18, ease: 'sine.inOut' }, 4.35);
+  tl.from('#out-a', { opacity: 0, x: -45, duration: .7, ease: 'power3.out' }, 5.0);
+  tl.from('#out-b', { opacity: 0, x: -45, duration: .7, ease: 'power2.out' }, 5.3);
+  // Object migration IS the transition from network to equation. These are not
+  // new copies of the terms, and the audio is not split at this boundary.
+  tl.to('#phase-2', { opacity: 0, duration: .18, ease: 'sine.inOut' }, 7.7);
+  tl.to('#phase-3', { opacity: 1, duration: .27, ease: 'sine.inOut' }, 7.88);
+  tl.from('#phase-3 h1', { y: 14, duration: .55, ease: 'power3.out' }, 7.88);
+  tl.from('#phase-3 .footer', { y: 8, duration: .5, ease: 'power2.out' }, 7.95);
+  tl.to('#routing-view', { opacity: 0, duration: .6, ease: 'sine.inOut' }, 7.7);
+  tl.to('#out-a', { x: -542, y: 98, duration: 1.2, ease: 'power3.inOut' }, 7.8);
+  tl.to('#out-b', { x: -124, y: -82, duration: 1.2, ease: 'power3.inOut' }, 7.8);
+  tl.from('#equals', { opacity: 0, x: -20, duration: .5, ease: 'power2.out' }, 8.65);
+  tl.from('#plus', { opacity: 0, scale: .7, duration: .5, ease: 'back.out(1.1)' }, 8.8);
+  tl.from('#sum-rule', { opacity: 0, y: 12, duration: .55, ease: 'sine.out' }, 9.25);
+  window.__timelines = window.__timelines || {};
+  window.__timelines['expert-routing'] = tl;
+  tl.seek(0);
+</script>
+</body>
+</html>

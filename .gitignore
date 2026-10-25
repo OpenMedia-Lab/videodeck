@@ -1,0 +1,11 @@
+.DS_Store
+__pycache__/
+*.pyc
+node_modules/
+output/
+review/
+*.mp4
+*.wav
+*.mp3
+*.local.json
+.env

@@ -1,0 +1,17 @@
+{
+  "name": "monochrome-technical",
+  "adoption": "example only; use after explicit selection",
+  "visual": {
+    "palette": ["#101114", "#ffffff", "#8a8f98"],
+    "accent": "#4589ff",
+    "principles": ["large mechanism objects", "readable rendered math", "causal transitions", "independent cover"]
+  },
+  "voice": {
+    "direction": "clear, natural, calm low male voice",
+    "selected_reference": null,
+    "selection": "audition needed unless a confirmed voice exists"
+  },
+  "duration": "follow the explanation without padding or omitting its mechanism",
+  "music": "resolve per task",
+  "pronunciation_aliases": {"MoE": "M O E", "DeepSeekMoE": "DeepSeek M O E"}
+}

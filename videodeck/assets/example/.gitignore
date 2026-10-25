@@ -1,0 +1,9 @@
+node_modules/
+.npm-cache/
+.hyperframes/
+assets/continuity.wav
+renders/
+review*/
+snapshots/
+*.log
+check.json
