@@ -36,7 +36,9 @@ model will always follow the skill.
   matching the locked Puppeteer dependency engines; package and lockfile now
   declare the same requirement. The tested Node 22.23.3 satisfies it.
 - CI runs the Python suite and installs/lints the npm-locked example. Full browser
-  rendering and visual inspection below were performed locally.
+  rendering and visual inspection below were performed locally. The initial
+  [Linux CI run](https://github.com/OpenMedia-Lab/videodeck/actions/runs/40216415425)
+  passed both jobs, including a fresh npm install and all 26 Python tests.
 
 ## HyperFrames example
 

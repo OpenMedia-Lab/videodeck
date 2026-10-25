@@ -12,26 +12,26 @@ required. Creative choices remain task-specific.
 
 ## Work and validation
 
-- [ ] Observe baseline agent behavior for publishing and audio/polish pressure cases.
-- [ ] Write a concise `videodeck/SKILL.md` and `agents/openai.yaml`, with stage-specific
+- [x] Observe baseline agent behavior for publishing and audio/polish pressure cases.
+- [x] Write a concise `videodeck/SKILL.md` and `agents/openai.yaml`, with stage-specific
   references for intake, storyboard, art direction, audio, HyperFrames, review and
   publishing. Preserve meaningful interactive answers and the separate final
   publication metadata confirmation.
-- [ ] Implement one Python standard-library helper at
+- [x] Implement one Python standard-library helper at
   `videodeck/scripts/timeline.py`: validate real timeline/caption intervals against
   the full master audio, and export canonical captions to SRT. Its JSON interface
   and behavior tests live alongside the helper/reference. It must not infer
   semantic correctness or manufacture approval.
-- [ ] Supply one small, deterministic, runnable HyperFrames mechanism example,
+- [x] Supply one small, deterministic, runnable HyperFrames mechanism example,
   pinned dependencies, and a configurable monochrome technical profile.
-- [ ] Test actual HyperFrames check/render → caption-cli evidence, inspect the
+- [x] Test actual HyperFrames check/render → caption-cli evidence, inspect the
   output and record sampled coverage and unverified listening explicitly.
-- [ ] Forward-test the finished skill with fresh agents on realistic scenarios;
+- [x] Forward-test the finished skill with fresh agents on realistic scenarios;
   inspect their actual decisions and artifacts, correct demonstrated gaps.
-- [ ] Validate packaging, relative references, script behavior and example build.
+- [x] Validate packaging, relative references, script behavior and example build.
   Review the complete result independently, focusing on missing gates, audio loss,
   source fidelity, public portability and claims that exceed evidence.
-- [ ] Publish MIT repository to the requested organization, verify CI/default
+- [x] Publish MIT repository to the requested organization, verify CI/default
   branch/license, and install the discoverable skill without replacing other skills.
 
 ## File boundaries
@@ -53,3 +53,10 @@ evidence preparation is distinguished from actual sampled agent review and
 continuous listening. Final publishing metadata is displayed in full and actually
 answered. Local output remains useful when credentials or model capabilities are
 unavailable.
+
+## Release evidence
+
+Published publicly with MIT licensing and `master` as the default branch.
+The initial implementation commit `9192d133de4e95d681d9e049c2ae38722b5f5c56`
+passed both Linux CI jobs: [validation run](https://github.com/OpenMedia-Lab/videodeck/actions/runs/40216415425).
+The discoverable skill and local-only personal preset were verified after installation.
