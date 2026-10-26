@@ -5,6 +5,10 @@ construction lines keep the mechanism readable; one blue accent identifies the
 token and its weighted contributions. The same contributions physically migrate
 from expert outputs into the equation, so motion explains the computation.
 
+This small 2D fixture tests deterministic seeking, object continuity and complete
+audio. Production art direction still needs its own spatial/material system and
+representative motion proof; this fixture is not a template for every shot.
+
 ## Colors
 
 - Canvas: `#f7f8fa`
@@ -28,6 +32,7 @@ sentences crossfade over 0.45 seconds while the objects preserve their identity.
 
 ## Avoid
 
-- Neon, gradients, glow, decorative patterns, or cloud-generated media.
+- Unmotivated neon, glow or decorative patterns. This fixture uses flat fills;
+  production depth may use restrained tonal gradients, highlights and shadows.
 - Raw TeX, unreadably small mathematics, or motion unrelated to the mechanism.
 - CDN scripts, remote fonts, nondeterministic randomness, timers, or autoplay.

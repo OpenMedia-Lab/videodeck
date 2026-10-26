@@ -6,6 +6,8 @@ before choosing commands. Verify current official docs when extending a composit
 [determinism](https://hyperframes.heygen.com/concepts/determinism),
 [source](https://github.com/heygen-com/hyperframes).
 Prefer a lockfile and project-local runtime over a rolling global install.
+When offline, use the pinned runtime's bundled/cached docs and report unresolved
+API questions; documentation lookup does not authorize network access.
 
 The small [runnable example](../assets/example/README.md) demonstrates a seekable
 mechanism and an audio track crossing visual changes. Adapt its technical contract;

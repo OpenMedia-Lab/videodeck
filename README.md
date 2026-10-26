@@ -35,7 +35,10 @@ Example request:
 > Reuse our accepted visual direction and voice, keep the equations, and deliver locally.
 
 The skill asks only for consequential missing choices. New voices get actual
-auditions; a new visual direction gets coded static frames before full production.
+auditions; narration gets contextual pronunciation probes. A new visual direction
+gets coded static frames, and a new motion language gets an encoded sample before
+full production. A restrained palette still permits detailed spatial construction,
+materials, lighting and effects.
 Requested platform publication has a separate confirmation of complete final copy.
 
 Record adopted series/voice preferences in project or installed-skill

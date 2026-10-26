@@ -18,6 +18,10 @@ next shot**. Soundtrack selection then supplies real timing anchors for the
 detailed storyboard. A scene change need not coincide with a sentence boundary.
 Avoid a sequence of static slides with unrelated decoration.
 
+In the detailed shots, name the viewer's focus, the object's actual change, its
+handoff/settle time and the labels or formulas that must stay visible. Reuse the
+global design brief; do not repeat its palette/material rules in every scene.
+
 Treat narration, screen text and synthesis text as separate layers. Render math
 as actual SVG/HTML/math layout; inspect the visible expression against the source.
 Weights, tensor dimensions, operations and arrow direction must agree. A convenient

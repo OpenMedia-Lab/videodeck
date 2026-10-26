@@ -16,11 +16,9 @@ proceed without another permission ritual. Reconfirm changed metadata.
 
 Keep titles/descriptions faithful to both the source topic and what this film
 teaches. Keep full provenance locally. Adapt public source attribution to the
-destination's current rules; an authored article's URL is not automatically safe
-to publish. Review title, body, cover, every visible source/footer/closing card,
-subtitles and spoken calls to action for destination restrictions before the
-final confirmation. Use actual newlines in
-structured JSON, not strings containing literal `\\n` that will appear in the post.
+destination's current rules using the selected adapter before final confirmation.
+Use actual newlines in structured JSON, not strings containing literal `\\n` that
+will appear in the post.
 Persist the submitted metadata version and link the real confirmation to it.
 
 Use the existing platform CLI/connector, inspect its current help/capabilities and
@@ -28,6 +26,11 @@ validate formats/limits before writing. Read the [Bilibili adapter](platforms/bi
 for that destination, or the [Xiaohongshu adapter](platforms/xiaohongshu.md) for
 Xiaohongshu; add another adapter only when needed. Authenticate using
 the tool's supported method and actual user action. Do not manufacture QR links.
+
+For existing-note revisions, respect the requested original ID and inspect actual
+media-replacement capability. Prepare changes for review before writing. A missing
+edit capability does not authorize deleting, reposting or appealing; report the
+limit and resolve the next action with the user.
 
 After confirmed submission, save receipts and read back exact visible title,
 description/newlines, category, tags, media/cover, visibility and collection order.

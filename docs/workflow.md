@@ -5,14 +5,19 @@ flowchart TD
     A[Articles, project material, script and references] --> B[Resolve consequential missing choices interactively]
     B --> C[Read sources, preserve terms and formulas, rough storyboard]
     C --> D{Narration or music?}
-    D -->|Yes| E[Audition or reuse accepted voice; complete coherent master audio]
+    D -->|Yes| E[Audition or reuse voice; contextual pronunciation probes; coherent master]
     E --> F[Refine timing from real acoustic anchors]
     D -->|No| F0[Time narrative actions and optional effects]
-    F --> G[Code key static frames and independent cover]
+    F --> G[Design composition, space and motion; code keyframes and cover]
     F0 --> G
     G --> H{Direction accepted?}
     H -->|Adjust| G
-    H -->|Yes or previously accepted| I[Deterministic HyperFrames animation]
+    H -->|Yes or previously accepted| H1{New or changed motion language?}
+    H1 -->|Yes| H2[Encoded mechanism and complete transition sample]
+    H2 --> H3{Motion accepted?}
+    H3 -->|Adjust| H2
+    H3 -->|Yes| I[Deterministic HyperFrames animation]
+    H1 -->|Accepted motion reused| I
     I --> J[Check and render actual MP4]
     J --> K[caption-cli evidence; agent review; focused dense inspection]
     K --> L{Content, visual and audio checks}

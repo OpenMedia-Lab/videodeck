@@ -95,3 +95,38 @@ before an edit. It distinguished public readability from recommendation limits
 and did not infer permission to repost or appeal. The 26 package/timeline tests
 and official skill validator passed after the reference changes. This is selected
 decision coverage, not a guarantee of platform moderation outcomes.
+
+## Pronunciation, motion craft and disclosure
+
+A fresh-context application check exercised three new cases:
+
+| Case | Observed decision |
+| --- | --- |
+| “按行处理矩阵，可以并行运行。Router 为 MoE 选路。” with an accepted voice and acronym convention | Distinguished háng from xíng per occurrence, reused the voice and `M O E` convention, and treated identical ASR text as insufficient phonetic evidence; proposed real contextual clips without inventing listening or timestamps |
+| New dimensional motion after flat keyframes had been accepted | Required spatial/material decisions and an encoded mechanism plus complete transition before full production; checked object identity, settling, protected text and planned occlusion |
+| Silent, local-only film | Read the production references needed for that task, skipped audio and publication, and did not introduce a model API requirement |
+
+Reference research covered three public henryz videos:
+[KV cache](https://www.xiaohongshu.com/explore/6ade18130000000025006227),
+[GPU execution](https://www.xiaohongshu.com/explore/6ad61594000000002803f2f7) and
+[Groq](https://www.xiaohongshu.com/explore/6ad8b9b80000000031037691).
+Searching the supplied rednote number matched this author; the profile endpoint
+returned HTTP 406, so its redId field was not directly verified. Local inspection
+consumed full-range 1 fps evidence and nine focused dense sequences: 89 contact
+sheets, 1,020 sampled frames in total. Dense requests were 8 or 12 fps; actual
+timestamps, rather than requested rates, define the evidence. This was sampled
+visual inspection, without continuous native playback or audio listening.
+
+The design guidance now distinguishes a restrained palette from flat construction:
+depth must explain structure, transformations preserve object identity, effects
+have a state/path consequence, and actions include readable settled states.
+Inspection also found brief text overlaps in the references; their presence was
+not adopted as a quality target. Exact easing curves or a universal spring style
+were not inferred from samples. The small bundled 2D example remains a runtime
+fixture rather than the production craft standard.
+
+A separate disclosure audit kept pronunciation in the existing audio guide,
+design decisions in art direction, and destination rules in their platform
+adapter. The entrypoint was reduced from 490 to 309 whitespace-delimited words,
+including frontmatter. These checks exercise routing and decisions, not a claim
+that instruction changes alone establish the quality of a future film.

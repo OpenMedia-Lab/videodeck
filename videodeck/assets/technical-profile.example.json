@@ -4,7 +4,8 @@
   "visual": {
     "palette": ["#101114", "#ffffff", "#8a8f98"],
     "accent": "#4589ff",
-    "principles": ["large mechanism objects", "readable rendered math", "causal transitions", "independent cover"]
+    "minimalism_scope": "restrained color; spatial construction, materials and motion remain deliberate",
+    "principles": ["large mechanism objects", "readable rendered math", "meaningful depth", "coherent light and materials", "causal transitions", "protected labels and readable holds", "independent cover"]
   },
   "voice": {
     "direction": "clear, natural, calm low male voice",

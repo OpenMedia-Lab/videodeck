@@ -1,20 +1,25 @@
 # Review the rendered artifact
 
 Use the actual final MP4, not only the HTML preview or screenshots. Verify decode,
-streams, dimensions, duration and audio start/end with ffprobe/FFmpeg. Compare final
-decoded audio against the complete master, allowing known codec padding. No universal
-fixed padding frame count guarantees an intact spoken tail.
+streams, dimensions and duration with ffprobe/FFmpeg. When audio exists, check its
+start/end and compare the decoded track with the complete master, allowing known
+codec padding. For narration, follow the
+[pronunciation record](audio.md#pronunciation-before-the-master) for risky spans;
+ASR text equality does not verify their phonetic reading.
 
 ## Evidence preparation
 
-Install [caption-cli](https://github.com/OpenMedia-Lab/caption-cli), run `doctor`,
-and check command help for the installed version. It uses local FFmpeg and no model
-API. Example (paths are project-local):
+Locate [caption-cli](https://github.com/OpenMedia-Lab/caption-cli), check installed
+help and run `doctor`; install only if missing and setup is permitted. If unavailable,
+use equivalent local timestamped evidence and name the substituted tools and limits.
+It uses local FFmpeg and no model API. Example (paths are project-local):
 
 ```bash
 caption-cli video-read --file output/final.mp4 --out review/full --transcript captions.srt
 caption-cli video-read --file output/final.mp4 --out review/transition --start 4 --end 6 --fps 8 --frame-width 720
 ```
+
+Omit transcript options for silent work without subtitles.
 
 SRT timestamps refer to original source time even for focused ranges. Canonical
 script captions are expected text, not independent recognition. Label their origin
@@ -34,17 +39,24 @@ densely around fast effects, boundaries, formulas and suspect cues. Check select
 frames at full size for math/subtitles and the cover at thumbnail size. Distinguish
 sampled visual coverage from continuous playback or frame-by-frame verification.
 
+For motion quality, inspect representative actions and transitions at actual
+playback speed when supported, supplemented by dense samples across the full
+action arc. Compare focus, object/camera continuity, acceleration, settling and
+readable holds with the [accepted design](art-direction.md). Check intended
+occlusion at entry, maximum overlap and exit. Record concrete defects with times:
+competing titles, effect-obscured formulas, inconsistent depth, repetitive inert
+motion or a key state that never gets a readable hold. Contact sheets and passing
+craft validators do not establish pacing or smoothness; if playback is unavailable,
+record that limit rather than claiming it passed.
+
 ## Review contract
 
 Record artifact hash/version, reviewer, ranges/sheets actually opened, sample
 rates, checks, findings, repairs and unverified capabilities. Review source fidelity,
 technical meaning, narrative flow, geometry, text, effects, caption timing and sound.
-For intended centered layouts, record frame midpoint, principal content-container
-centers and both insets for representative shots, closing cards and covers.
-Inspect the final encoded artifact at phone size; a shared asymmetric safe-area
-constant can displace every shot while leaving individual elements aligned.
-ASR/alignment are supporting evidence; explicitly record unavailable listening,
-music/timbre judgment or continuous motion review.
+Compare final encoded geometry with the accepted [layout measurements](art-direction.md),
+including closing cards and covers at phone size. For sound, record actual listening
+coverage and unverified pronunciation/music judgments using the audio guide's limits.
 
 Fix the earliest bad layer, rerender affected artifacts and update the review to
 the new version. Recheck affected intervals and boundaries; full decode/metadata
