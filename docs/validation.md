@@ -67,3 +67,31 @@ No native listening, voice audition, new narration synthesis or live publication
 was claimed by this example. Those remain real workflow steps for a task that
 requires them. Private voice references, tutorial media, local account state,
 generated videos and model weights are excluded from the public repository.
+
+## Portrait publication feedback
+
+A real publication task exposed two gaps after user acceptance: asymmetric
+interface-safe margins displaced the main diagrams by roughly 40–54 pixels in a
+1080-pixel portrait frame, and a readable public video was later restricted for
+an outbound article URL in its body. Creator detail still showed enabled/public;
+the creator list exposed the punishment and edit advice. Public readability and
+activity association had therefore not established recommendation eligibility.
+
+The installed guidance now calls for measured content-center checks in keyframes,
+closing cards and covers; destination-specific review of body, visible sources,
+subtitles and narration; and separate reporting of moderation and public-read
+state. The Xiaohongshu reference routes to official rules and actual account
+notices, keeps full provenance locally, and distinguishes neutral attribution from
+outbound instructions. Replacing a video's media must be verified independently
+from editing its text; neither an edit nor a prior successful post proves that a
+restriction is lifted. The task's revised films and platform correction remain
+separate work with their own review and confirmation.
+
+A fresh-context application check with the revised installed skill correctly
+calculated x540 versus x500 and caption center502.5, retained intentional left
+alignment inside centered regions, reviewed outbound wording across text/visuals/
+speech, preserved original note IDs, and required complete changed-version review
+before an edit. It distinguished public readability from recommendation limits
+and did not infer permission to repost or appeal. The 26 package/timeline tests
+and official skill validator passed after the reference changes. This is selected
+decision coverage, not a guarantee of platform moderation outcomes.

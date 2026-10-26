@@ -15,19 +15,26 @@ confirmation of final metadata. If the same exact version is already confirmed,
 proceed without another permission ritual. Reconfirm changed metadata.
 
 Keep titles/descriptions faithful to both the source topic and what this film
-teaches. Include source attribution/link where appropriate. Use actual newlines in
+teaches. Keep full provenance locally. Adapt public source attribution to the
+destination's current rules; an authored article's URL is not automatically safe
+to publish. Review title, body, cover, every visible source/footer/closing card,
+subtitles and spoken calls to action for destination restrictions before the
+final confirmation. Use actual newlines in
 structured JSON, not strings containing literal `\\n` that will appear in the post.
 Persist the submitted metadata version and link the real confirmation to it.
 
 Use the existing platform CLI/connector, inspect its current help/capabilities and
 validate formats/limits before writing. Read the [Bilibili adapter](platforms/bilibili.md)
-for that destination; add another adapter only when needed. Authenticate using
+for that destination, or the [Xiaohongshu adapter](platforms/xiaohongshu.md) for
+Xiaohongshu; add another adapter only when needed. Authenticate using
 the tool's supported method and actual user action. Do not manufacture QR links.
 
 After confirmed submission, save receipts and read back exact visible title,
 description/newlines, category, tags, media/cover, visibility and collection order.
-Platform acceptance, processing, review and public availability are different
-states: report the observed state and verified URL/ID. If the call outcome is
+Platform acceptance, processing, review, recommendation/search restrictions and
+public availability are different states: report the observed state and its time,
+plus the verified URL/ID. A readable public note can still have a moderation
+restriction; inspect creator moderation fields when available. If the call outcome is
 unknown, query the receipt/creator state before retrying; avoid duplicate posts.
 
 Respect the user's metadata preferences, including whether to add manual AI-related

@@ -39,6 +39,10 @@ sampled visual coverage from continuous playback or frame-by-frame verification.
 Record artifact hash/version, reviewer, ranges/sheets actually opened, sample
 rates, checks, findings, repairs and unverified capabilities. Review source fidelity,
 technical meaning, narrative flow, geometry, text, effects, caption timing and sound.
+For intended centered layouts, record frame midpoint, principal content-container
+centers and both insets for representative shots, closing cards and covers.
+Inspect the final encoded artifact at phone size; a shared asymmetric safe-area
+constant can displace every shot while leaving individual elements aligned.
 ASR/alignment are supporting evidence; explicitly record unavailable listening,
 music/timbre judgment or continuous motion review.
 

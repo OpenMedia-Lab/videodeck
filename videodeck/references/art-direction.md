@@ -16,6 +16,15 @@ microtext; preserve necessary equations, captions and labels. Render formulas an
 symbols before capture; raw LaTeX or a tiny illegible equation is not a substitute.
 Check margins and captions at phone size, including platform interface safe areas.
 
+Record the intended content centerline and left/right insets. For a centered
+portrait composition, compare the main diagram, equation, caption and cover
+containers with the actual frame midpoint; symmetric player bars do not prove
+the content is centered. Reserve interface clearance symmetrically when possible.
+An asymmetric safe area changes the visual center and needs an explicit design
+choice. Check the rendered pixels as well as CSS coordinates, including the
+densest shot and closing card; left-aligned headings can remain left-aligned
+inside a centered content region.
+
 Design transitions as part of the explanation: an object travels into the next
 context, a camera follows the same quantity, a scan reveals structure, or particles
 reconstruct a meaningful state. Choose among these; no effect is mandatory.
