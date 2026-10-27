@@ -22,14 +22,37 @@ In the detailed shots, name the viewer's focus, the object's actual change, its
 handoff/settle time and the labels or formulas that must stay visible. Reuse the
 global design brief; do not repeat its palette/material rules in every scene.
 
-Treat narration, screen text and synthesis text as separate layers. Render math
-as actual SVG/HTML/math layout; inspect the visible expression against the source.
-Weights, tensor dimensions, operations and arrow direction must agree. A convenient
-shape morph must not imply that distinct mathematical objects are identical.
+## Visible mathematics
 
-Lock accepted claims, narration, formulas and examples when the user requests only
-polish. A known source or audio defect outside that scope should be reported with
-its effect; do not quietly rewrite the core. If the user authorizes repair, change
+Treat narration, display notation and synthesis text as separate layers. Before
+coding, inventory every visible mathematical expression: canonical source meaning,
+intended typeset form and all scene/element occurrences, including small labels,
+tensor dimensions, axes, captions, closing cards and the cover. Inspect every
+occurrence, even with a shared style.
+
+All mathematical notation MUST use real math layout (rendered SVG/HTML or equivalent
+explicit subscript/superscript layout). A mathematical `d_model` must display as
+the typeset equivalent of `d_{\mathrm{model}}`, not a baseline underscore string;
+apply the same distinction
+to `W_Q`, `E_i`, powers, fractions and Greek symbols. Preserve literal identifiers
+such as `config.d_model` only in explicit code/API context with code typography.
+Do not globally rewrite identifiers or remove notation to hide a rendering failure.
+
+Check the inventory against the compiled composition and actual encoded pixels.
+Raw TeX/Markdown delimiters, unintended underscores, missing glyphs, renderer error
+output or incorrect indices are failures. Source strings, a successful math-renderer
+call and correct large equation blocks do not prove the labels rendered. Inspect
+native-size crops and intended viewing size; compare weights, dimensions,
+operations and arrow direction with the source. A shape morph MUST NOT imply that
+distinct mathematical objects are identical.
+
+## Revision scope
+
+Lock accepted claims, narration, formulas, examples, composition and motion when
+the user requests only polish; change only the authorized parts. Preserve accepted
+transitions under the [art-direction contract](art-direction.md#preserve-transitions).
+A known source or audio defect outside that scope should be reported with its
+effect; do not quietly rewrite the core. If the user authorizes repair, change
 the relevant source/voice/timing contract and regenerate only affected outputs.
 
 For mechanical interval checks and canonical subtitle export, read the

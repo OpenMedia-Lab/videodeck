@@ -2,10 +2,23 @@
   "name": "monochrome-technical",
   "adoption": "example only; use after explicit selection",
   "visual": {
-    "palette": ["#101114", "#ffffff", "#8a8f98"],
+    "palette": [
+      "#101114",
+      "#ffffff",
+      "#8a8f98"
+    ],
     "accent": "#4589ff",
-    "minimalism_scope": "restrained color; spatial construction, materials and motion remain deliberate",
-    "principles": ["large mechanism objects", "readable rendered math", "meaningful depth", "coherent light and materials", "causal transitions", "protected labels and readable holds", "independent cover"]
+    "minimalism_scope": "restrained color; precise construction, layering, motion and detail in 2D or justified local 3D",
+    "principles": [
+      "large mechanism objects",
+      "typeset math including small labels",
+      "precise 2D hierarchy and layering",
+      "scoped spatial views when justified",
+      "preserve accepted causal transitions",
+      "protected labels and readable holds",
+      "independent cover"
+    ],
+    "dimensionality": "2D first; scoped 3D only when necessary spatial relationships cannot be explained clearly in 2D; consider authoring/render/revision cost"
   },
   "voice": {
     "direction": "clear, natural, calm low male voice",
@@ -14,5 +27,8 @@
   },
   "duration": "follow the explanation without padding or omitting its mechanism",
   "music": "resolve per task",
-  "pronunciation_aliases": {"MoE": "M O E", "DeepSeekMoE": "DeepSeek M O E"}
+  "pronunciation_aliases": {
+    "MoE": "M O E",
+    "DeepSeekMoE": "DeepSeek M O E"
+  }
 }

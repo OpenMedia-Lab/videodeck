@@ -21,12 +21,12 @@ caption-cli video-read --file output/final.mp4 --out review/transition --start 4
 
 Omit transcript options for silent work without subtitles.
 
-SRT timestamps refer to original source time even for focused ranges. Canonical
-script captions are expected text, not independent recognition. Label their origin
-in the review record; don't claim they prove the speech matches. For independent
-local ASR, `caption-cli transcribe` accepts a local whisper.cpp binary/model; use
-its output with `--transcript-provenance local_asr`. Models are optional downloads,
-not bundled dependencies. Other trusted local ASR is equally usable.
+SRT timestamps use original source time, including focused ranges. Canonical
+captions are expected text, not independent recognition. Label transcript provenance;
+optional local ASR can use `caption-cli transcribe` with a local whisper.cpp binary
+and model, or another trusted tool. Use `--transcript-provenance local_asr` for its
+output. Follow the [audio evidence limits](audio.md#listening-capability); ASR does
+not prove pronunciation.
 
 Read `packet.json` and assign its `tasks.jsonl` ranges to yourself/subagents. Open
 the actual contact sheets, compare canonical text and source, and inspect audio
@@ -35,19 +35,33 @@ evidence was consumed. A prepared packet or subagent dispatch is not a completed
 review. Inspect every assigned sheet; ensure the reviewed ranges cover the film.
 
 At ordinary sampling rates, inspect all-time-range story continuity; sample more
-densely around fast effects, boundaries, formulas and suspect cues. Check selected
-frames at full size for math/subtitles and the cover at thumbnail size. Distinguish
+densely around fast effects, boundaries, formulas and suspect cues. Derive focused
+ranges from actual timeline anchors: begin before the first actor/label moves and
+end after the last actor settles and labels appear. Read packet timestamps; a
+range starting with an already assembled result does not inspect its assembly.
+Include every scene boundary and the full sweep of moving objects near text.
+Check native-size crops for the [complete notation inventory](storyboard.md#visible-mathematics),
+not only prominent equations, and inspect the cover at thumbnail size. Distinguish
 sampled visual coverage from continuous playback or frame-by-frame verification.
 
-For motion quality, inspect representative actions and transitions at actual
-playback speed when supported, supplemented by dense samples across the full
-action arc. Compare focus, object/camera continuity, acceleration, settling and
-readable holds with the [accepted design](art-direction.md). Check intended
-occlusion at entry, maximum overlap and exit. Record concrete defects with times:
-competing titles, effect-obscured formulas, inconsistent depth, repetitive inert
-motion or a key state that never gets a readable hold. Contact sheets and passing
-craft validators do not establish pacing or smoothness; if playback is unavailable,
-record that limit rather than claiming it passed.
+For motion quality, compare the accepted sample and changed passages at matched
+playback speed when supported, including outgoing/incoming states. Check focus,
+identity, acceleration, settling, readable holds and planned occlusion against the
+[motion specification](art-direction.md#preserve-transitions). Log concrete defects
+with times. If playback is unavailable, leave smoothness unverified; contact sheets
+and passing validators do not establish it.
+
+## Release criteria
+
+| Check | Required evidence / failure condition |
+| --- | --- |
+| Notation | Reconcile every inventory occurrence with actual encoded pixels and source meaning. Unrendered or wrong notation fails, including a small dimension label. |
+| Motion | Cover each boundary and complete demanding action arcs against the accepted motion specification. Lost transitions, clipped exits, unrelated text occlusion or missing readable holds fail. |
+| Dimensionality | Check the brief's scoped reason for 3D. Unjustified extrusion or an unapproved departure from accepted dimensionality fails the design contract. |
+
+Known failures MUST be repaired within scope and rechecked before calling the
+artifact ready. Unavailable capabilities require targeted human review and MUST
+remain unverified, not passed.
 
 ## Review contract
 

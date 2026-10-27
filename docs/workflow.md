@@ -8,7 +8,7 @@ flowchart TD
     D -->|Yes| E[Audition or reuse voice; contextual pronunciation probes; coherent master]
     E --> F[Refine timing from real acoustic anchors]
     D -->|No| F0[Time narrative actions and optional effects]
-    F --> G[Design composition, space and motion; code keyframes and cover]
+    F --> G[Choose 2D or justified local 3D; typeset all notation; keyframes and cover]
     F0 --> G
     G --> H{Direction accepted?}
     H -->|Adjust| G
@@ -34,7 +34,7 @@ flowchart TD
 Repairs return to the earliest bad layer (source, sound, timing, animation or encoding),
 not necessarily only to rendering. Present actual audio/frame candidates rather
 than asking the user to specify professional design terminology. Routine edits
-reuse accepted directions; local previews can be delivered before final acceptance.
+preserve accepted motion specifications; local previews can be delivered before final acceptance.
 
 The workflow incorporates the reference tutorial
 [如何用 agent 做视频](https://xhslink.cn/o/3NjfcrXedKu): rough storyboard, coherent audio,

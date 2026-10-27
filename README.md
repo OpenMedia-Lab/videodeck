@@ -37,8 +37,9 @@ Example request:
 The skill asks only for consequential missing choices. New voices get actual
 auditions; narration gets contextual pronunciation probes. A new visual direction
 gets coded static frames, and a new motion language gets an encoded sample before
-full production. A restrained palette still permits detailed spatial construction,
-materials, lighting and effects.
+full production. Start with precise 2D construction; use scoped 3D only for
+necessary spatial relationships that 2D cannot explain clearly. Typeset small math
+labels as well as equations, and preserve accepted motion during local repairs.
 Requested platform publication has a separate confirmation of complete final copy.
 
 Record adopted series/voice preferences in project or installed-skill

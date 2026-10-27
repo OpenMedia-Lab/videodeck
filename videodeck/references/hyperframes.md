@@ -23,7 +23,16 @@ acceptable when equally deterministic and seekable.
 The composition's media timing and animation timeline must agree. Put the complete
 master audio on its own track with explicit start/duration. Never inherit a shot's
 cropping window for continuous narration. Keep text/subtitle cues tied to acoustic
-anchors. Pre-render math to SVG or finish math DOM layout before capture.
+anchors. Implement the [visible-math contract](storyboard.md#visible-mathematics)
+through a shared rendering path; finish math/font layout before capture. Inspect
+compiled output as well as source DOM: serialization, escaping or font substitution
+can break notation after a successful renderer call.
+
+Schedule transitions on the composition timeline, including any overlap across
+scene windows. In a planned continuous passage, shared objects and outgoing motion
+MUST NOT reset or disappear before their scheduled handoff ends. Seek before,
+through and after each boundary in both directions; verify the accepted handoff
+survives compilation and encoding.
 
 Run supported structural/layout/motion checks, then render the actual deliverable.
 Some versions offer unified `check --json`; others expose `lint`, `validate` and

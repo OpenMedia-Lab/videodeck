@@ -20,18 +20,21 @@ versions; preserve locked content during revisions.
 ## Produce and review
 
 1. Read [storyboard](references/storyboard.md): full sources, explanatory thread,
-   rough shots, then detailed actions. Agree any unsourced content-creation scope.
+   rough shots, then detailed actions and a complete visible-math inventory. Agree
+   any unsourced content-creation scope.
 2. For sound, read [audio](references/audio.md): audition or reuse a voice, test
    contextual pronunciation, build a coherent master, then derive real timing.
    For silent work, time the narrative actions directly.
 3. Read [art direction](references/art-direction.md): reference-led composition,
-   space, motion and detail. Show coded keyframes and an independent cover;
-   validate a new motion language with an actual encoded sample. Reuse accepted
+   2D-first construction, motion and detail. Preserve accepted transitions. Show
+   coded keyframes and an independent cover; validate a new motion language with
+   an actual encoded sample. Reuse accepted
    directions and resolve changed choices before full production.
 4. Read [HyperFrames](references/hyperframes.md): pinned runtime, deterministic
    seekable animation, complete audio across cuts, actual MP4 rendering.
 5. Read [review](references/review.md): consume full-range evidence and targeted
-   dense samples, check the actual encoded artifact and repair failed intervals.
+   dense samples, reconcile every math label and complete motion arc with the
+   actual encoded artifact, and repair failed intervals.
    Record inspected ranges and capability limits; prepared evidence is not review.
 6. Show the complete film for human review. Deliver versioned video, cover,
    captions, editable sources and review record, or continue to publication.

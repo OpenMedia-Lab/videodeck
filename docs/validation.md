@@ -130,3 +130,33 @@ design decisions in art direction, and destination rules in their platform
 adapter. The entrypoint was reduced from 490 to 309 whitespace-delimited words,
 including frontmatter. These checks exercise routing and decisions, not a claim
 that instruction changes alone establish the quality of a future film.
+
+## Notation, preserved transitions and dimensionality
+
+On 2026-10-27, user feedback identified unrendered small mathematical labels,
+regressed transitions and unnecessary 3D in real films. This revision changes
+instructions and adopted local preferences only; no film was regenerated or edited.
+
+An independent review found and corrected overbroad wording that would have
+forbidden intentional cuts or user-authorized dimensionality changes. Requirements
+now have one owner: notation in storyboard, construction/motion in art direction,
+runtime behavior in HyperFrames, and evidence/failure criteria in review.
+
+Fresh-context bounded applications used a 12-second silent source, a bare
+`d_model` SVG label, a separate `config.d_model` code panel, and an accepted token
+path spanning a four-second scene boundary. The final portable-skill application,
+without personal configuration, produced these observable decisions:
+
+- Typeset the dimension label, preserve the literal code, and inventory every
+  mathematical occurrence rather than trusting the correct large equation.
+- Keep the accepted path, timing and easing across the scene boundary; leave
+  actual smoothness unverified without the encoded sample and playback.
+- Use 2D for data flow and for GPU/memory adjacency, since a top view preserves
+  the required relationship; reserve 3D for a necessary unresolved spatial relation.
+- Skip audio/publication references and operations for this silent local plan.
+
+The baseline skill also produced several correct decisions; this is not a claimed
+before/after failure-rate improvement. These were planning applications, not
+rendering or playback tests. The 26 package/timeline tests, official skill validator
+and Markdown diff checks passed; no new image, listening or motion-quality pass is
+inferred from those checks.
