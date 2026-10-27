@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="560" viewBox="0 0 1280 560" role="img" aria-labelledby="title desc">
+<title id="title">videodeck — make the mechanism visible</title><desc id="desc">An original workflow illustration connecting source, voice, composition and a reviewed film.</desc>
+<rect width="1280" height="560" fill="#F4F5F1"/><path d="M48 48H1232M48 512H1232" stroke="#CDD3CF"/>
+<g font-family="Arial,Helvetica,sans-serif" fill="#172321"><text x="64" y="88" font-size="16" letter-spacing="3">OPENMEDIA LAB / AGENT SKILL</text><text x="60" y="207" font-size="96" font-weight="700" letter-spacing="-5">videodeck</text><text x="64" y="267" font-size="29">Make the mechanism visible.</text><text x="64" y="310" font-size="21" fill="#64716C">Source → voice → motion → review</text></g>
+<g transform="translate(64 365)" font-family="Arial,Helvetica,sans-serif"><rect width="355" height="83" fill="#172321" rx="8"/><text x="22" y="32" fill="#96A79F" font-size="14">START WITH YOUR CODING AGENT</text><text x="22" y="61" fill="#F4F5F1" font-size="22">Use $videodeck to explain…</text></g>
+<g transform="translate(622 111)"><rect width="594" height="337" rx="14" fill="#FFFFFF" stroke="#CDD3CF"/><rect x="0" y="0" width="594" height="38" rx="14" fill="#E7EBE7"/><circle cx="20" cy="19" r="4" fill="#9CA9A2"/><circle cx="36" cy="19" r="4" fill="#9CA9A2"/><circle cx="52" cy="19" r="4" fill="#9CA9A2"/>
+<g font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#172321"><text x="28" y="77">ONE TOKEN. TWO EXPERTS. ONE RESULT.</text><text x="28" y="310" font-size="13" fill="#64716C">SOURCE-GROUNDED  /  HTML + SVG  /  LOCAL EVIDENCE</text></g>
+<path d="M108 169H215M296 132H355V169H430M296 213H355V169" fill="none" stroke="#2E5CE6" stroke-width="3"/>
+<g fill="#EBF0FF" stroke="#2E5CE6" stroke-width="2"><rect x="50" y="141" width="58" height="58" rx="8"/><rect x="215" y="104" width="81" height="56" rx="6"/><rect x="215" y="185" width="81" height="56" rx="6"/><circle cx="462" cy="169" r="32"/></g>
+<g font-family="Arial,Helvetica,sans-serif" font-size="20" fill="#2E5CE6" text-anchor="middle"><text x="79" y="177">x</text><text x="255" y="139">E₁</text><text x="255" y="220">E₂</text><text x="462" y="177">y</text></g>
+<g fill="#2E5CE6"><circle cx="151" cy="169" r="5"/><circle cx="355" cy="169" r="5"/></g>
+<path d="M28 274H566" stroke="#E0E5E0"/><rect x="28" y="269" width="185" height="5" fill="#2E5CE6"/>
+</g><text x="64" y="495" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#64716C">Clear 2D. Purposeful motion. Complete audio. Reviewable delivery.</text></svg>

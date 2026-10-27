@@ -1,83 +1,88 @@
+<p align="center">
+  <img src="docs/assets/readme-hero.svg" alt="videodeck: a source-grounded workflow from an idea to a reviewed explanatory film" width="100%">
+</p>
+
 # videodeck
 
-[中文](README_ZH.md) · [Workflow](docs/workflow.md) · [Validation](docs/validation.md)
+**Turn technical writing into an explanatory video with your coding agent.**
 
-An Agent Skill for making explanatory videos from articles, project materials and
-scripts. It combines source-grounded storytelling, deliberate motion, consistent
-audio and evidence-based agent review. Companion to
-[postdeck](https://github.com/OpenMedia-Lab/postdeck).
+Keep the mechanism, equations and examples. Choose a voice, build deliberate
+motion, and review the actual film before delivery. Works with Agent Skills-compatible
+hosts; HyperFrames renders and [caption-cli](https://github.com/OpenMedia-Lab/caption-cli)
+prepares local review evidence.
 
-**HyperFrames renders. caption-cli prepares local evidence. The agent reviews.**
-The skill requires no third-party model API, cloud account or paid video service.
-Voice generation and optional local ASR use the tools you choose. Agent hosting,
-optional models and destination services have their own requirements.
+[Quick start](#quick-start) · [See it move](#see-it-move) · [Workflow](docs/workflow.md) · [Guide](docs/usage.md) · [中文](README_ZH.md)
 
-## Install
+[![CI](https://github.com/OpenMedia-Lab/videodeck/actions/workflows/validate.yml/badge.svg)](https://github.com/OpenMedia-Lab/videodeck/actions/workflows/validate.yml)
+[![MIT](https://img.shields.io/badge/license-MIT-172321)](LICENSE)
 
-Clone the repository, then link the inner skill folder into Codex's skills directory
-(the link command deliberately fails if an installation already exists):
+## See it move
 
-```bash
+![Actual render: weighted Expert outputs travel into the equation](docs/assets/readme-demo.gif)
+
+A six-second excerpt from the included [12.4-second runnable example](videodeck/assets/example/README.md).
+The same weighted outputs become the terms in the equation. This fixture uses a
+synthetic continuity tone; it is not a voiceover sample. [Reproduce the demo](docs/assets/README.md).
+
+## Quick start
+
+Install the inner skill directory in your host. For Codex:
+
+```sh
 git clone https://github.com/OpenMedia-Lab/videodeck.git
+cd videodeck
 mkdir -p "$HOME/.codex/skills"
 videodeck_target="$HOME/.codex/skills/videodeck"
 test ! -e "$videodeck_target" && test ! -L "$videodeck_target" &&
-  ln -s "$PWD/videodeck/videodeck" "$videodeck_target"
+  ln -s "$PWD/videodeck" "$videodeck_target"
 ```
 
-For other Agent Skills-compatible hosts, install the same inner `videodeck/` folder
-in that host's skill directory. Cross-runtime hosts may support `~/.agents/skills`.
-No other skill is required. Automatic discovery is enabled by default.
+Already installed? Update the existing checkout. Other hosts use the same inner
+`videodeck/` folder in their skill directory. [Installation and requirements](docs/usage.md#install).
 
-Example request:
+Then give your agent a source and a destination:
 
-> Use $videodeck to explain this article to engineers in a landscape video.
-> Reuse our accepted visual direction and voice, keep the equations, and deliver locally.
+> Use $videodeck to turn this article into a 90-second portrait explainer for
+> engineers. Keep the equations and worked example. Reuse our accepted voice and
+> transitions, and deliver a local video, cover and captions for review.
 
-The skill asks only for consequential missing choices. New voices get actual
-auditions; narration gets contextual pronunciation probes. A new visual direction
-gets coded static frames, and a new motion language gets an encoded sample before
-full production. Start with precise 2D construction; use scoped 3D only for
-necessary spatial relationships that 2D cannot explain clearly. Typeset small math
-labels as well as equations, and preserve accepted motion during local repairs.
-Requested platform publication has a separate confirmation of complete final copy.
+For your first film, supply the article, intended audience and platform or aspect
+ratio. The skill resolves meaningful missing choices through concrete voice
+samples, keyframes and motion proofs.
 
-Record adopted series/voice preferences in project or installed-skill
-`videodeck.local.json`; these ignored files can hold private reference paths.
-Task answers take priority over standing settings.
+## From source to film
 
-## Tools
-
-| Tool | Role |
+| Stage | What you get |
 | --- | --- |
-| [HyperFrames](https://github.com/heygen-com/hyperframes) | Deterministic HTML/SVG/GSAP composition and rendering |
-| [caption-cli](https://github.com/OpenMedia-Lab/caption-cli) | Local timestamped sheets, audio and review tasks; no inference API |
-| FFmpeg / ffprobe | Media preparation, decoding and integrity checks |
-| User-selected voice tools | Auditions, stable narration, optional music/effects |
-| Source/platform CLI | Acquire references or perform confirmed publication |
+| Understand | Source-grounded outline, locked claims and an explanatory thread |
+| Hear | An auditioned or reused voice, contextual pronunciation checks and one complete master |
+| Design | Typeset math, clear 2D construction, justified local 3D and an independent cover |
+| Animate | Audio-timed actions, preserved transitions and a seekable composition |
+| Review | Actual encoded video, timestamped visual evidence and explicit listening limits |
+| Deliver | MP4, cover, subtitles, editable sources and a review record |
 
-Python 3.10+ runs the bundled timeline helper without Python dependencies. The
-[small example](videodeck/assets/example/README.md) pins a tested HyperFrames runtime
-and Node requirement; it is a technical starting point, not a universal style.
+No model API or paid video account is required by the skill. Your agent host and
+chosen voice tools have their own requirements. Publication is optional and uses
+confirmed final copy and settings. [Full workflow](docs/workflow.md).
 
-```bash
-python3 -m unittest discover -s tests -v
-python3 videodeck/scripts/timeline.py check /path/to/timeline.json
-python3 videodeck/scripts/timeline.py srt /path/to/timeline.json --out /path/to/captions.srt
-```
+## Choose your next step
 
-## What is included
+| I want to… | Start here |
+| --- | --- |
+| Make or revise a film | [Skill entrypoint](videodeck/SKILL.md) |
+| Try the renderer without a voice model | [Runnable HyperFrames example](videodeck/assets/example/README.md) |
+| Keep a series' voice and style | [Project preferences](docs/usage.md) |
+| Review generated media locally | [caption-cli](https://github.com/OpenMedia-Lab/caption-cli) |
+| Publish after review | [Bilibili](videodeck/references/platforms/bilibili.md) · [Xiaohongshu](videodeck/references/platforms/xiaohongshu.md) |
+| Check what was actually validated | [Validation record](docs/validation.md) |
 
-The [concise entrypoint](videodeck/SKILL.md) routes to focused references for intake,
-storyboarding, art direction, sound, rendering, review and publication. A small
-timeline validator protects interval/audio boundaries and exports canonical SRT;
-it does not certify technical accuracy, aesthetics, listening quality or consent.
-An opt-in profile demonstrates monochrome technical art direction without imposing
-private series settings or a particular voice model on other users.
+## Contribute
 
-Full-range contact sheets are sampled evidence, not continuous video understanding.
-Review records distinguish actual inspection, ASR, waveform checks and listening
-limitations. See the [test evidence](docs/validation.md) for the current boundaries.
+Open an [issue](https://github.com/OpenMedia-Lab/videodeck/issues) with the source
+context, expected behavior and a minimal reproducible case. Run
+`python3 -m unittest discover -s tests -v` before submitting changes. Keep private
+voice references, account state and source media outside the repository.
 
-MIT. Third-party runtimes, fonts, voice references and source media retain their
-own terms; they are not bundled into this skill.
+Part of [OpenMedia-Lab](https://github.com/OpenMedia-Lab), alongside
+[postdeck](https://github.com/OpenMedia-Lab/postdeck) for social image cards.
+[MIT](LICENSE); external runtimes, fonts and source media keep their own terms.
