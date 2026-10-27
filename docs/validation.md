@@ -160,3 +160,20 @@ before/after failure-rate improvement. These were planning applications, not
 rendering or playback tests. The 26 package/timeline tests, official skill validator
 and Markdown diff checks passed; no new image, listening or motion-quality pass is
 inferred from those checks.
+
+## Full-script pronunciation lexicon
+
+Strata viewer feedback identified missing technical-term pronunciation controls,
+including RAM and compound forms of MoE. The audio guide now requires complete
+script scanning, a reusable contextual lexicon and inspectable synthesis input,
+while keeping canonical captions and units unchanged. It does not prescribe a
+pronunciation from a viewer's ambiguous shorthand.
+
+A fresh-context, planning-only application used three Chinese sentences with RAM,
+64 MiB, Router, MoE, repeated Expert, DeepSeekMoE and three occurrences of 行.
+The agent produced an occurrence-indexed lexicon and separate plain-text TTS
+candidate, preserved the confirmed MoE convention, distinguished háng/xíng in
+context, and retained unresolved RAM and missing voice-recipe states. It did not
+invent SSML support, audio takes, timestamps or listening results. This exercises
+text preparation and evidence decisions, not synthesis or pronunciation quality.
+The 26 package/timeline tests and official skill validator passed after the update.

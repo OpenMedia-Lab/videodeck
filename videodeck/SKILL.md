@@ -23,7 +23,8 @@ versions; preserve locked content during revisions.
    rough shots, then detailed actions and a complete visible-math inventory. Agree
    any unsourced content-creation scope.
 2. For sound, read [audio](references/audio.md): audition or reuse a voice, test
-   contextual pronunciation, build a coherent master, then derive real timing.
+   the full-script pronunciation lexicon, build a coherent master, then derive
+   real timing.
    For silent work, time the narrative actions directly.
 3. Read [art direction](references/art-direction.md): reference-led composition,
    2D-first construction, motion and detail. Preserve accepted transitions. Show

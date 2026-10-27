@@ -22,28 +22,44 @@ requested, gets its own coherent track and deliberate relation to the narration.
 
 ## Pronunciation before the master
 
-Before full synthesis, record risky polyphones, acronyms, names, technical terms,
-numbers and formulas: **canonical context, intended reading, synthesis control,
-verified take/time or unresolved status**. Resolve ordinary contextual readings
-yourself; ask only about an unresolved convention. Reuse accepted terminology.
+Before full synthesis, the agent MUST scan the complete canonical narration and
+its source for technical terms: acronyms, product/model names, units, mixed-language
+phrases, numbers/formulas and Chinese polyphones. Cover every spoken occurrence,
+including compounds and case variants; a few handpicked test words are insufficient.
+Automate matching against the lexicon, then make a contextual pass for missed or
+ambiguous terms. Regex and ASR alone are not a complete terminology scan.
 
-| Context | Reading to preserve |
+Maintain one reusable project/domain pronunciation lexicon. Each entry records
+**canonical term, occurrence contexts/IDs, intended reading, active synthesis
+control, and evidence/status**. Merge confirmed series choices first; a current
+explicit override wins. Resolve ordinary readings from the source and reliable
+term references; ask only when a consequential convention remains ambiguous.
+Newly detected terms are candidates, not automatically approved pronunciations.
+
+| Context | Decision |
 | --- | --- |
-| 一行矩阵 | 行 = háng |
-| 并行计算、运行时 | 行 = xíng |
-| MoE / DeepSeekMoE | Reuse the accepted reading; for a letter-by-letter choice, test `M O E` / `DeepSeek M O E` in the actual sentence |
+| 一行矩阵 / 并行计算、运行时 | Context selects háng / xíng; never globally replace 行. |
+| MoE / DeepSeekMoE | Reuse the confirmed convention; if letter-by-letter was selected, test `M O E` / `DeepSeek M O E` in the actual sentence. |
+| RAM, MiB or ambiguous shorthand | Establish the source term and intended word/letter/expanded reading. Do not infer a reading from capitalization or a viewer's shorthand. |
 
-Keep synthesis aliases reversible and canonical screen text/subtitles unchanged.
-Control each occurrence in context; globally replacing 行 loses the distinction.
-Use dictionaries, phonemes or SSML only with verified tool support; check that the
-model's active generation path actually uses the chosen control.
+Generate a separate, inspectable TTS input from the lexicon BEFORE synthesis.
+Apply reversible aliases or verified dictionary/phoneme/SSML controls to each
+context; preserve canonical subtitles, screen text and units. Check occurrence
+coverage and the canonical-to-synthesis diff: no missed risky term, unrelated
+replacement or changed meaning. Never silently convert every acronym to letters.
 
-Probe the surrounding sentence with the frozen voice recipe; inspect risky spans
-again in the encoded deliverable. Unprompted ASR detects omitted/changed words;
-identical Chinese characters cannot verify a polyphone's sound, and normalized
-acronyms cannot verify letters versus a word. Alignment supplies positions, not
-phonetic proof. Verify through actual listening; otherwise provide timestamped
-clips for human review and leave the pronunciation status unverified.
+Verify that the model's active generation path actually consumes the control.
+Unsupported markup or an instruction prompt is not a pronunciation fix. With the
+frozen voice recipe, test each new, changed or unverified entry in its complete
+sentence; retain the take/time and update the lexicon for reuse. Recipe/engine
+changes require rechecking affected controls. Keep detected, annotated and
+listening-verified states distinct; unresolved readings cannot be marked passed.
+
+Inspect risky spans again in the encoded deliverable. Unprompted ASR detects
+omitted/changed words; identical Chinese characters do not verify a polyphone's
+sound, and normalized acronyms do not verify letters versus a word. Alignment
+supplies positions, not phonetic proof. Verify through actual listening; otherwise
+provide timestamped clips for human review and leave pronunciation unverified.
 
 ## Preserve the waveform
 
